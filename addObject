@@ -1,0 +1,20 @@
+import boto3
+
+#Creates an S3 client.
+s3_client = boto3.client('s3')
+
+# Uploads the file to the Bucket
+# In order to use the 'Bucket' attribute we need to create a resource of s3.
+s3_resource = boto3.resource('s3')
+
+# In this scenario we upload the files data as an object using put_object
+# We asign the path we want for the file as a Key and the data of the file as the Body
+bucket_name = 'YOUR BUCKET NAME'
+s3_resource.Bucket(bucket_name).put_object(Key='YOUR FILE NAME')
+print('File uploaded.')
+
+# KEY NAME EXAMPLES
+test.txt
+test.jpg
+test.py
+test.java
